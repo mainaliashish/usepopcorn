@@ -1,9 +1,9 @@
 import React from "react";
 
-function NumResults() {
+function NumResults({ movieLength }) {
   return (
     <p className="num-results">
-      Found <strong>X</strong> results
+      Found <strong>{movieLength}</strong> results
     </p>
   );
 }

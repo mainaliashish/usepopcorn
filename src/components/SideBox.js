@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { tempMovieData } from "../utils/constants";
+import React, { useState } from "react";
 import MovieCard from "./MovieCard";
 
-function SideBox() {
+function SideBox({ movies }) {
   const [isOpen1, setIsOpen1] = useState(true);
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    setMovies(tempMovieData)
-  }, [])
   return (
     <div className="box">
       <button
