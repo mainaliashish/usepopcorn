@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { tempMovieData } from "../utils/constants";
 import NavBar from "./Navbar";
+import NumResults from "./NumResults";
 import SideBox from "./SideBox";
 import MainBox from "./MainBox";
 
@@ -11,7 +12,9 @@ function Main() {
   }, [])
   return (
     <>
-      <NavBar movieLength={movies.length} />
+      <NavBar>
+        <NumResults movieLength={movies.length}/>
+      </NavBar>
       <main className="main">
         <SideBox movies={movies}/>
         <MainBox />

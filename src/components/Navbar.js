@@ -1,14 +1,13 @@
 import React from "react";
 import Logo from "./Logo";
 import Search from "./Search";
-import NumResults from "./NumResults";
 
-function NavBar({ movieLength }) {
+function NavBar({ children }) {
   return (
     <nav className="nav-bar">
       <Logo />
       <Search />
-      <NumResults movieLength={movieLength}/>
+      { children }
     </nav>
   );
 }
