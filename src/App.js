@@ -1,15 +1,22 @@
-import './App.css';
+import React from "react";
+import NavBar from "./components/Navbar";
+import SideBox from "./components/SideBox";
+import MainBox from "./components/MainBox";
 
-function App() {
+function Main() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World
-        </p>
-      </header>
-    </div>
+    <main className="main">
+      <SideBox />
+      <MainBox />
+    </main>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <NavBar />
+      <Main />
+    </>
+  );
+}
