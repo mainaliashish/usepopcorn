@@ -44,3 +44,5 @@ export const tempWatchedData = [
     userRating: 9,
   },
 ];
+
+export const API_KEY = "d57429a4"

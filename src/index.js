@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
+import './index.css';
+import App from './App';
 import StarRating from './components/StarRating'
 import reportWebVitals from './reportWebVitals';
 
@@ -18,11 +18,11 @@ function Test() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <StarRating maxRating={5} defaultRating={3}/>
+    <App />
+    {/* <StarRating maxRating={5} defaultRating={3}/>
     <StarRating size={25} color="red" defaultRating={4}/>
     <StarRating size={32} color="green" defaultRating={2}/>
-    <Test/>
+    <Test/> */}
   </React.StrictMode>
 );
 

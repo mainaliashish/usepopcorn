@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { tempWatchedData } from "../utils/constants";
+import { tempWatchedData, API_KEY } from "../utils/constants";
 import WatchedMovies from "./WatchedMovies";
 import WatchedMovieHeader from "./WatchedMovieHeader";
 
@@ -8,6 +8,8 @@ function MainBox() {
   const [isOpen2, setIsOpen2] = useState(true);
   useEffect(() => {
     setWatched(tempWatchedData);
+    // fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=interstellar`)
+    // .then(res => res.json()).then(data => setWatched(data.Search))
   }, []);
   return (
     <div className="box">
