@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import MovieCard from "./MovieCard";
 
-function SideBox({ movies }) {
+function SideBox({ movies, selectedId, setSelectedId }) {
   const [isOpen1, setIsOpen1] = useState(true);
+
   return (
     <div className="box">
       <button
@@ -14,7 +15,7 @@ function SideBox({ movies }) {
       {isOpen1 && (
         <ul className="list">
           {
-            <MovieCard movies={movies} />
+            <MovieCard movies={movies} selectedId={selectedId} setSelectedId={setSelectedId} />
           }
         </ul>
       )}

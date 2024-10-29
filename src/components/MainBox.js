@@ -3,14 +3,21 @@ import { tempWatchedData, API_KEY } from "../utils/constants";
 import WatchedMovies from "./WatchedMovies";
 import WatchedMovieHeader from "./WatchedMovieHeader";
 
-function MainBox() {
+function MainBox({ selectedId }) {
+  console.log(selectedId);
   const [watched, setWatched] = useState([]);
   const [isOpen2, setIsOpen2] = useState(true);
   useEffect(() => {
     setWatched(tempWatchedData);
-    // fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=interstellar`)
-    // .then(res => res.json()).then(data => setWatched(data.Search))
-  }, []);
+    fetchWatchedMovie();
+  }, [selectedId]);
+
+  async function fetchWatchedMovie() {
+    const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${selectedId}`);
+    const data = await res.json();
+    // console.log(data);
+    setWatched(data);
+  }
   return (
     <div className="box">
       <button
